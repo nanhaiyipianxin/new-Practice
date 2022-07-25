@@ -3,7 +3,7 @@
 int main1236()
 {
 	char de[100];
-	char arr[17]= {"ÏëÀ´¾Í¿´¼û¿ª¾Ö¿Ó"};
+	char arr[17]= {"æƒ³æ¥å°±çœ‹è§å¼€å±€å‘"};
 	gets(de);
 	printf("%s\n", de);
 	printf("%s\n", arr);
