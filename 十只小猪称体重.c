@@ -1,6 +1,6 @@
 #include<stdio.h>
 #define SIZE 10
-int main8()
+int main()
 
 
 {
@@ -9,32 +9,26 @@ int main8()
 	{
 		scanf_s("%d", &arr[i]);
 	}
-	for (int i = 0; i < SIZE; i++)
+	printf("以下是输入数据\n");
+	for (int q = 0; q < SIZE; q++)
 	{
-		printf("%d\n", arr[i]);
+		printf("%d\n", arr[q]);
 	}
+	printf("以下是输出数据，最高值\n");
+
 	int max = arr[0];
-	for (int e = 0; e < SIZE; e++)
+	for (int e = 1; e < SIZE; e++)
 	{
 		if (arr[e] > max)
 		{
 			max = arr[e];
 		}
-		printf("%d\n", max);
-	
-	
+		
+
+
 	}
+	printf("%d\n", max);
 	return 0;
-
-
-
-
-
-
-
-
-
-
 
 	return 0;
 }
