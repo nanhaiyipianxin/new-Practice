@@ -13,7 +13,7 @@ int main11111()
 		system("color 0c");
 		putchar('\n');
 	}
-	printf("               BAO��hhh");
+	printf("               心型*表示");
 	printf("\n\n\n");
 	return 0;
 
