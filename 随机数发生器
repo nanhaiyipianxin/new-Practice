@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include<time.h>			//系统时间调用库
+#include<stdlib.h>
+int main()
+{
+	time_t ou = time(NULL);            //时间类型变量 
+	srand((size_t)ou);//调用随机发生器 使用被赋值的种子ou size_t类型
+
+		for (int i = 0; i < 6; i++)
+		{				   
+			printf("%d\n", rand() % 50 + 50);//取余控制在50的范围内，rand是随机发生器结果
+		}
+
+return 0;
+}
+/*每产生一个随机数之前，都调用一次srand，而由于计算机运行很快，
+所以你每次用time得到的时间都是一样的（time的时间精度较低，只有55ms）。这样相当于使用
+同一个种子产生随机序列，所以产生的随机数总是相同的。应该把srand放在循环外：*/
+/*如果有初始化调用，那么后面就会随机，打印一样是因为打印的第一次调用的初始随机数*/
