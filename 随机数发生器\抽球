@@ -1,15 +1,22 @@
 #include <stdio.h>
 #include<time.h>			//系统时间调用库
 #include<stdlib.h>
+#include <cstring>
 int main()
 {
 	time_t ou = time(NULL);            //时间类型变量 
 	srand((size_t)ou);//调用随机发生器 使用被赋值的种子ou size_t类型
+	char arr[10];
+	for (int i = 0; i < 6; i++)
+	{
+		arr[i] = (rand() % 32);//取余控制在50的范围内，rand是随机发生器结果
+	}
+	arr[6] = rand() % 16;
 
-		for (int i = 0; i < 6; i++)
-		{				   
-			printf("%d\n", rand() % 50 + 50);//取余控制在50的范围内，rand是随机发生器结果
-		}
+	for (int e = 0; e < 7; e++)
+	{
+		printf("%d ", arr[e]);
+	}
 
 return 0;
 }
