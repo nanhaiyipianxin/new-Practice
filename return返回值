@@ -6,5 +6,6 @@ int foo(void)
 int main(int argc, char* argv[])
 {
 	int a = foo();
+printf("%s\n",argv[0]);
 	return a;
 }
