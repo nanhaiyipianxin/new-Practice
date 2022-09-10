@@ -9,11 +9,5 @@ int main1236()
 	printf("%s\n", arr);
 
 	
-
-
-
-
-
-
 	return 0;
 }
