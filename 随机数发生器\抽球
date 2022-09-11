@@ -6,18 +6,36 @@ int main()
 {
 	time_t ou = time(NULL);            //时间类型变量 
 	srand((size_t)ou);//调用随机发生器 使用被赋值的种子ou size_t类型
-	char arr[10];
+	int arr[10]={0};
+	int qq = 0;
+	int w;
 	for (int i = 0; i < 6; i++)
 	{
-		arr[i] = (rand() % 32);//取余控制在50的范围内，rand是随机发生器结果
+		int vse = (rand() % 31+1);//取余控制在50的范围内，rand是随机发生器结果
+	
+			for (w = 0; w < qq; w++)   //在数组内循环，这步是去重操作
+			{
+				if (arr[w]==vse)			 //如果此阶段vse等于arr中的任何一值
+				{
+					i--;                   //使i值减还执行，重复覆盖
+					break;
+				}
+			}
+	
+			if (w == qq)
+			{
+				arr[qq] = vse;
+					qq++;					//记录增加次数，以后每次都多循环去重一次
+		    }
 	}
-	arr[6] = rand() % 16;
+	
 
-	for (int e = 0; e < 7; e++)
+	for (int e = 0; e < 6; e++)
 	{
 		printf("%d ", arr[e]);
+		
 	}
-
+printf("%d", rand() % 15+1);
 return 0;
 }
 /*每产生一个随机数之前，都调用一次srand，而由于计算机运行很快，
