@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include<time.h>			//系统时间调用库
+int add(char ch1[],char ch2[])
+{
+	int i = 0;
+	while (ch1[i]==ch2[i])
+	{
+		if (ch1[i]=='\0')             //比对到最后位置了
+		  {
+		  	return 0;
+		  }
+		i++;
+	}
+	return ch1[i] > ch2[i] ? 1:-1;  //三目运算符
+
+}
+
+int main()
+{
+	char c[] = "helow";
+	char z[] = "hellow";
+	int qq = add(c, z);
+
+  printf("%d", qq);
+	if (qq == 0)
+	{
+		printf("两个字符串相同");
+	}
+	else
+	{
+		printf("两个字符串不相同");
+	}
+}
