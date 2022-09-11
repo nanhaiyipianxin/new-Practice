@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include<time.h>			//系统时间调用库
+int add(int q, int e)
+{
+
+	int sum = q * e;
+	return sum;
+
+}
+void print()
+{
+	printf("这是第二个函数");
+}
+int main()
+{
+	int ww=add(2,7);
+	printf("第一个函数%d\n", ww);
+	print();
+	return 0;
+}
