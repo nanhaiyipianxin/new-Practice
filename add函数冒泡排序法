@@ -1,0 +1,29 @@
+void add()
+{
+	int shuzu[100] = { 0 };
+	for (size_t i = 0; i < 5; i++)
+	{
+		scanf_s("%d", &shuzu[i]);
+	}
+	
+	for (int i = 0; i < (sizeof(shuzu) / sizeof shuzu[0]) -1; i++)
+	{
+		for (int j = 0; j < (sizeof(shuzu) / sizeof shuzu[0] )-1-i; j++)        //-i是因为从最末尾开始比较，至于为什么不从开始比较，因为更不好实现
+		{
+			if(shuzu[j]>shuzu[j+1])
+			{
+				int cunchu = shuzu[j];           //交换两数位置
+				shuzu[j] = shuzu[j + 1];
+					shuzu[j + 1] = cunchu;
+			}
+		}
+	}
+	for (size_t q = 0; q < sizeof (shuzu)/ sizeof shuzu[0]; q++)
+	{
+		if (shuzu[q] != 0)	
+		{
+			printf("%d ", shuzu[q]);
+		}
+	}
+	return;                                                                   //这个是个无返回值的函数
+}
