@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include"标头.h"
+int main(void)
+{
+
+	int a = 0xaabbcc;
+	printf("%p\n",&a);//以十六进制格式打印a的，低序地址
+	                                                          //getchar();
+  
+  
+	int* z = NULL;   if (z==NULL)	{	}   //空指针，条件判断
+  
+	int* d = 100;     //这是一个野指针，直接指向了100的值
+	
+	int* p;           //定义整形指针，什么类型的指针，就用来配合什么类型的值
+	p = &a;			  //将p指针中存储一个a的地址
+	*p = 100;		  //用*p就是a的数值 改变a的数值,*(int*)p=100,这种是让返回值等于int类型
+	printf("%d\n", a);              //输出100
+  printf("%d\n", *p);            //输出100
+  printf("%d\n",sizeof(char*));  //查看char类型指针大小
+
+	char ch = 'a';
+	char* w = &a;
+
+
+	int www = 10;			//万能指针
+	void* ee = &www;      //万能指针给地址
+	*(int*)ee = 100;			//万能指针，给类型
+	return 0;
+
+}
