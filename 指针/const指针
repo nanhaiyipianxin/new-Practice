@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main(void)
+{	
+	const int a = 10;    //常量，但是在#include中定义的不可用指针改变
+	//a= 50,不能使用
+	int* p = &a;		
+	*p = 50;			//指针修改常量
+
+	int qq = 100;       
+	int w = 10;
+	int wcc = 20;
+
+
+	const int* ccc=&w;//指针常量 	//*ccc = 100;不可用，因为指针常量就是指针是个常量
+	int* const eee = &qq;   //常量指针   eee=&w ，不可修改
+
+	int* const* rrr = &wcc;			//全常量
+	int** erji = &rrr;				//二级指针
+
+
+
+	printf("%d\n%d", *p,*ccc);
+	return 0;
+
+}
