@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include"heat.h"
+
+int main(void)
+{														//指针数组
+	int a[] = { 1,2,3 };
+	int b[] = { 4,5,6 };
+	int c[] = { 7,8,9 };
+	int* arr[] = { a,b,c };
+	int** p = arr;
+	printf("%d\n", *p[0]);
+	printf("%d\n", **(p + 1));   	//4
+	printf("%d\n", *(*(p + 1)));	//4                   //二级指针加偏移量相当于跳过了一个一维数组
+	printf("%d\n", *((*p) + 1));	//2					  //一级指针加偏移量相当于跳过一个元素
+	printf("%d\n", *(*p + 1));	    //2
+	printf("%d\n", *(*(p + 2)+1));  //8
+
+	for (size_t i = 0; i < 3; i++)				//指针打印
+	{
+		for (int j = 0; j < 3; j++) 
+		{
+			printf("%d ", p[i][j]);
+			printf("%d ", *(p[i]+j));
+			printf("%d ", *(*(p + i)+j));
+
+		}
+		puts(" ");
+	}
+
+											//二级指针
+	int aa = 10; int d = 20;
+	int* e = &aa;
+	int** ee = &e;
+	//*ee =&d;   //等同于p=&d
+	//**ee = 100;   //此时aa=100
+	//*pp=100         //err,野指针禁止的
+	printf("%d\n",**ee);
+
+
+
+	return;
+}
