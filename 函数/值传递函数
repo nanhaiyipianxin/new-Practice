@@ -1,0 +1,6 @@
+void hanshu(int* a, int* b)     //值传递 修改实参的值
+{
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+}
