@@ -1,0 +1,52 @@
+void pinjie(char* ch1, char* ch2)           //字符串拼接函数
+{
+	int i = 0; int j = 0;
+	while (ch1[i]!='\0')					//计算大小
+	{
+		i++;
+	}
+
+	while (ch2[j] != '\0')
+	{
+		ch1[i + j] = ch2[j];                 
+		j++;
+	}
+	ch1[i + j] = '\0';
+	return;
+}
+
+
+
+void zhizhenb(char* a,char* b)                //字符串拼接指针版
+{
+	int i = 0; int j = 0;
+	while (*(a+i)!='\0')
+	{
+		i++;
+	}
+	while (*(b+j)!=0)
+	{
+		*(a + i + j) = *(b + j);
+			j++;
+	}
+	*(a + i + j) = '\0';
+}
+
+
+
+void zhizhena(char* a, char* b)             //字符串拼接地址指针版
+{
+	while (*a)a++;                //先是a的地址，然后偏移到末尾
+	while (*b)                    //b的地址，先用b替换末尾的\0，然后b偏移，依次给a，最后会把\0也给a
+	{
+		//*a = *b;
+		//a++;
+		//b++;
+		(* a++) = ( * b++);                  //优化版
+	}
+}
+
+使用方法:	char ww[10] = "hello";
+	char qq[] = "word";
+	zhizhena(ww, qq);
+	printf("%s\n",ww);
