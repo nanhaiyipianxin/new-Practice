@@ -1,0 +1,31 @@
+char* chazhao(char* ch, char c)        //查找字符串，返回地址
+{
+	int i = 0;
+	while (ch[i])
+	{
+		if(ch[i]==c)
+		{
+			return&ch[i];
+		}
+		i++;
+	}
+	return 0;
+}
+
+char* chazhao2(char* ch, char c)    //指针查找字符串返回地址
+{
+	while (*ch)
+	{
+		if (*ch == c) 
+		{
+			return ch;
+		}
+		ch++;
+	}
+	return 0;
+}
+
+使用方法
+	char ww[] = "  h e ll o";
+	char*p=chazhao2(ww,'e');
+	printf("%c\n", *p);
