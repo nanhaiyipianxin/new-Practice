@@ -1,0 +1,12 @@
+int strle(char * ch)         //计算字符串大小
+{
+	int i = 0;
+	while (ch[i] != '\0')i++;
+	return i;
+}
+int str(char* ch)             //计算字符串大小，给首地址，然后指针增加，最后相减 
+{
+	char* temp = ch;
+	while (*temp)temp++;
+	return temp - ch;
+}
