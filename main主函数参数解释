@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include"heat.h"
+//ggc -o hello hello.c(4个参数 "gcc" "-o" "hello" "hello.c")
+//int argc 表示传递参数个数
+//char*argv[]={"gcc" "-o" "hello" "hello.c"}  表示参数具体内容
+int main(int argc, char* argv[])
+{
+	if(argc<3)
+	{
+		printf("缺少参数");
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		printf("%s\n", argv[i]);
+	}
+	return 0;
+}
