@@ -1,4 +1,4 @@
-char* bianli(char* src, char* dest)
+char* bianli(char* src, char* dest)              //字符串查找函数
 {
 	char* z = src;		//遍历用的
 	char* w = src;		//存储记录每次比对首地址
@@ -46,3 +46,17 @@ int main(void)
 	cishu(p, ch);
 	return 0;
 }
+-------------------------------------------------------------------------------查找出现函数（do while）
+char* p = "1317503019koko";
+char ch[] = "ko";
+int count = 0;
+do {
+	p = bianli(p, ch);   //执行一次
+	if(p)				//不是空，就是真，就是执行到返回值
+	{
+		count++;         //然后++一次
+		p += strlen(ch);  //让p跳过已经查找过的
+		p = bianli(p,ch);//继续调用
+	}
+} while (p);             //为假的时候就不运行了 
+printf("[%s]出现次数= %d\n", ch, count);
