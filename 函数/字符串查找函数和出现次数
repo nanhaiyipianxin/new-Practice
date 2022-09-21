@@ -23,3 +23,26 @@ char* bianli(char* src, char* dest)
 }
 
 使用方法
+bianli(ww,zz)
+-------------------------------------------------------------------------------查找出现函数↓↓↓
+char* cishu(char* ee, char* ch)
+{
+	int n = 0;
+	while ((ee = bianli(ee, ch)) != NULL) //如果查找返回值不为空
+	{
+		ee += strlen(ch); //字符串跳转一个查询大小(ch),让其可以给后面查询
+		n++;             //记录出现次数，就是返回值不为空次数
+		if (*ee == 0)break;//如果到结尾结束循环
+
+	}
+
+	printf("[%s]出现次数= %d\n", ch, n);
+}
+使用方法
+int main(void)
+{
+	char* p = "1317503019koko";
+	char ch[] = "ko";
+	cishu(p, ch);
+	return 0;
+}
