@@ -1,0 +1,27 @@
+
+
+查找字符串个数
+
+int* count(char* ch)
+{
+	int cont = 0; int i = 0;
+	while (ch[i])
+	{
+		if (ch[i] != ' ') cont++;
+		i++;
+	}
+	return cont;
+}
+
+
+
+
+int * coun(char* ch)
+{
+	int cont = 0;
+	while (*ch)
+	{
+		if (&ch != 32)cont++;
+	}
+	return cont;
+}
