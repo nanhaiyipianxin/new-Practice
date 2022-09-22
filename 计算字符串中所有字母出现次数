@@ -1,0 +1,15 @@
+int main(void)
+{
+	char ch[] = "eweqwewqesadkofsjnsafsaufsf ewe";
+		int arr[26] = { 0 };                              //定义一个对照数组
+		for (int i = 0; i < strlen(ch); i++)              //让i小于数组大小，每执行一次自增
+		{
+			arr[ch[i] - 'a']++;                           //arr[](ch[i]-32)得到阿斯科码的位置然后自增
+		}
+		for (int i = 0; i < 26; i++)                      //在数组中循环打印
+		{
+			if (arr[i])
+				printf("字母%c的出现次数;%d\n", i + 'a', arr[i]);           //以%c阿斯科码输出，i+32就是对应的阿斯科码,打印对应的
+		}
+	return 0;
+}
