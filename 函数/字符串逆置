@@ -1,7 +1,7 @@
 void zhe(char* ch)
 {
 	int i = 0;
-	int j = strlen(ch) - 1;
+	int j = strlen(ch) - 1;                       //0-10 所以元素减一
 	while (i<j)
 	{
 		char temp = ch[i];
