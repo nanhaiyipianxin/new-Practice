@@ -1,0 +1,12 @@
+int sysmm(char*ch)
+{
+	char* ftemp = ch;
+	char* btemp = ch + strlen(ch) - 1;
+	while (ftemp<btemp)//循环，如果不相等返回1
+	{
+		if (*ftemp != *btemp)
+			return 1;
+		ftemp++; btemp--;
+	}
+	return 0;
+}
