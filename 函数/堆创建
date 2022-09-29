@@ -1,0 +1,32 @@
+#include<stdlib.h>
+#include<stdio.h>
+#include<time.h>
+#include"head.h"
+#define MAX 10
+int main(void)
+{
+	srand((size_t)time(NULL));
+	int* p = (int*)malloc(sizeof(int) * MAX);
+	for (size_t i = 0; i < MAX; i++)
+	{
+		p[i] = rand() % 100;
+		printf("%d\n", p[i]);
+	}
+		
+	printf("\n");
+	zhizhenpaixu(p, MAX);
+		for (size_t i = 0; i < MAX; i++)
+		{
+			//printf("%d\n", p[i]);
+			p++;
+			printf("%d\n", *p);
+		}
+		free(p);
+
+	//↓↓↓野指针
+	//printf("%p\n", z);
+	//*z = 55;
+	//printf("%d\n", *z);
+	return 0;
+
+}
