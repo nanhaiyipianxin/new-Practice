@@ -1,0 +1,31 @@
+#include<stdlib.h>
+#include<stdio.h>
+#include<time.h>
+#include<string.h>
+#include"head.h"
+void fun1(int* p)
+{
+	p = (int*)malloc(sizeof(int) * 10);     //虽然把p传递过来了，也给p的地址指向了分配的堆空间
+	printf("%值传递，形参:%p\n", p);			//但是，值传递，单纯操作值，函数中形参不能改变实参
+}
+void fun2(int** p)
+{
+	*p = (int*)malloc(sizeof(int) * 10);    //地址传递，将p的地址,传递过来，对p的地址进行操作
+	printf("%地址传递，实参:%p\n", *p);		//
+}
+int* fun3()
+{
+	int* p = (int*)malloc(sizeof(int) * 10);		//返回值为p
+	printf("返回值传递:%p\n", p);			//可以让p得到值
+	return p;
+}
+int main(void)
+{
+	int* p = NULL;
+	//fun1(p);
+	//fun2(&p);
+	p = fun3();
+	printf("\t  实参:%p\n", p);
+	free(p);
+	return 0;
+}
