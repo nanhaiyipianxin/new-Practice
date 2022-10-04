@@ -1,0 +1,40 @@
+#include<stdlib.h>
+#include<stdio.h>
+#include<time.h>
+#include<string.h>
+#include"head.h"
+struct ou
+{
+	char name[21];
+	int age;
+	char sex;
+	int score[3];
+	char addr[51];
+
+};//stu= { "张三",18,100,"河北软件职业技术学院" };
+int main() {
+
+	struct ou stu[3] =
+	{
+		{"ADC",22,'M',100,100,100,"河北软件职业技术学院"},
+		{"法师",21,'M',100,100,100,"河北软件职业技术学院"},
+		{"战士",21,'M',100,100,100,"河北软件职业技术学院"},
+	};
+	printf("结构体数组字节:%d\n", sizeof(stu));//字节不符，是因为结构体成员需要偏移对此
+	printf("结构体原色字节:%d\n", sizeof(stu[0]));
+	printf("结构体个数字节:%d\n", sizeof(stu)/(sizeof(stu[0])));
+	for (size_t i = 0; i < 3; i++)
+	{
+
+	
+	printf("姓名:%s\n", stu [i].name);
+	printf("年龄:%d\n", stu [i].age);
+	printf("性别:%s\n", stu [i].sex=='M'?"男" : "女");
+	printf("成绩:%d\n", stu[i].score[0]);
+	printf("成绩:%d\n", stu[i].score[1]);
+	printf("成绩:%d\n", stu[i].score[2]);
+	printf("地址:%s\n", stu [i].addr);
+	printf("%\n");
+	}
+	return 0;
+}
