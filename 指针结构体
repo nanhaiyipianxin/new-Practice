@@ -1,0 +1,48 @@
+#include<stdlib.h>
+#include<stdio.h>
+#include<time.h>
+#include<string.h>
+#include"head.h"
+typedef struct stu ss;
+struct stu {
+	char* name;
+	int age;
+	int* scores;
+	char* addr;
+};
+int main() {
+	ss* p = (ss*)malloc(sizeof(ss) * 3);       //开辟三个指针结构体实例
+	for (size_t i = 0; i < 3; i++)             //对其中元素开辟结构体
+	{
+		//(p+i)->元素;
+		p[i].name = (char*)malloc(sizeof(char) * 21);
+		p[i].scores = (int*)malloc(sizeof(int) * 3);
+		p[i].addr = (char*)malloc(sizeof(char) * 51);
+	}
+	for (size_t i = 0; i < 3; i++)
+	{
+		scanf_s("%s",(p+i)->name,8,12);
+		scanf_s("%d",&p[i].age,8);
+		scanf_s("%d",&p[i].scores[0],6);
+		scanf_s("%d",&p[i].scores[1],6);
+		scanf_s("%d",&p[i].scores[2],6);
+		scanf_s("%s", (p + i)->addr,21);
+	}
+	for (size_t i = 0; i < 3; i++)
+	{
+		printf("%s\n", p[i].name);
+		printf("%d\n",p[i].age);
+		printf("%d\n",p[i].scores[0]);
+		printf("%d\n",(p+i)->scores[1]);
+		printf("%d\n",(p+i)->scores[2]);
+		printf("%s\n", (*(p+i)).addr);
+		printf("\n");
+	}
+	for (size_t i = 0; i < 3; i++)
+	{
+		free(p[i].name);
+		free(p[i].scores);
+		free(p[i].addr);
+	}
+	return 0;
+}
