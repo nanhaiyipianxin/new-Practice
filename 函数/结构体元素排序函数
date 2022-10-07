@@ -1,0 +1,51 @@
+#include<stdlib.h>
+#include<stdio.h>
+#include<time.h>
+#include<string.h>
+#include"head.h"
+typedef struct steu ss;
+typedef struct ou w;
+struct steu {
+	char name[21];
+	int age;
+	int scores[3];
+	char addr[51];
+};
+void BubbleSort(ss * stu, int len)
+{
+	//printf("%d\n", sizeof(stu));
+
+	for (int i = 0; i < len - 1; i++)
+		for (int j = 0; j < len - i - 1; j++)
+		{
+			//if (stu[j].age>stu[j + 1].age)
+			if ((stu + j)->age > (stu + j + 1)->age)
+			{
+				ss  temp = stu[j];
+				stu[j] = stu[j + 1];
+				stu[j + 1] = temp;
+			}
+		}
+}
+int main() {
+	
+	
+
+	ss stu[3] = {
+	{"宋江",19,100,99,88,77,"河北软件职业技术学院"},
+	{"小刘",17,100,55,66,88,"河北软件职业技术学院"},
+	{"小杜",18,100,88,88,66,"河北软件职业技术学院"}
+	};
+	BubbleSort(stu, 3);
+	for (size_t i = 0; i < 3; i++)
+	{
+		printf("%s\n",stu[i].name);
+		printf("%d\n",(stu+i)->age );
+		printf("%d\n",stu[i].scores[0]);
+		printf("%d\n",(stu+i)->scores[1]);
+		printf("%d\n",(stu+i)->scores[2]);
+		printf("%s\n",(stu+i)->addr);
+	}
+	return 0;
+
+}
