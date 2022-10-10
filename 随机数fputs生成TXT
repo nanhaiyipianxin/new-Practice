@@ -1,0 +1,38 @@
+enum opt
+{
+	add, sub, mlt, dive
+
+};
+int main()
+{
+srand((size_t)time(NULL));
+FILE* fp;
+errno_t e =fopen_s(&fp, "C:/Users/ouzho/Desktop/四则运算.txt","w");
+if (!fp)return -1; 
+int a, b; char c;
+char* p = (char*)malloc(sizeof(char) * 20);
+for (int i = 0; i < 100; i++)
+{
+	a = rand() % 10 + 1;
+	b = rand() % 10 + 1;
+
+switch (rand()%4)
+{
+case add:c = '+';
+	break;
+case sub:c = '-';
+	break;
+case mlt:c = '*';
+	break;
+case dive:c = '/';
+	break;
+}
+memset(p,0,20);//重置p的20内空间
+sprintf_s(p,20,"%d%c%d=\n", a,c,b);//拷贝字符到p,追加字符大小,格式,字符
+fputs(p, fp);  //将p中写入到fp;
+}
+free(p);
+fclose(fp);
+return 0;
+	
+}
